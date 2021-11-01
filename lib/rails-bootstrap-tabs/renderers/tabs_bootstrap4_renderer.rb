@@ -2,8 +2,8 @@ module RailsBootstrapTabs::Renderers
   class TabsBootstrap4Renderer < TabsRenderer
     def render_tabs_wrapper
       if @options[:nav_markup]
-        content_tag :div, role: 'tablist' do
-          content_tag :nav, class: 'nav nav-tabs' do
+          content_tag :nav do
+        content_tag :div, class: 'nav nav-tabs', role: 'tablist' do
             yield
           end
         end
