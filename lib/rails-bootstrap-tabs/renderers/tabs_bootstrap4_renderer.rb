@@ -2,7 +2,7 @@ module RailsBootstrapTabs::Renderers
   class TabsBootstrap4Renderer < TabsRenderer
     def render_tabs_wrapper
       if @options[:nav_markup]
-        content_tag :nav, class: 'nav nav-tabs' do
+        content_tag :nav, class: 'nav nav-tabs', role: 'tablist' do
           yield
         end
       else
@@ -18,7 +18,7 @@ module RailsBootstrapTabs::Renderers
       link_class << ' active' if options[:active]
       link_class << " #{options[:link_class]}" if options[:link_class]
       if options[:nav_markup]
-        link_to "##{options[:anchor]}", data: { toggle: 'tab' }, class: link_class do
+        link_to "##{options[:anchor]}", data: { :'bs-toggle' => 'tab' }, class: link_class do
           yield
         end
       else
